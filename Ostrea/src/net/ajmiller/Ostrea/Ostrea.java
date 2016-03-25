@@ -37,8 +37,12 @@ public class Ostrea {
 //			System.out.println((JSONObject)ji.next());
 //		}
 
-		System.out.println(new Stations());
-
+		Stations stations = new Stations();
+		System.out.println(stations);
+		
+		Location home = new Location("47.827074", "-122.643950", "home");
+		
+		System.out.println(home.getLat() + home.getLon() + home.getName());
 	}
 
 }
