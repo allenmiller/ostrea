@@ -6,20 +6,19 @@ public class Station {
 
     private JSONObject jstation = null;
     private String name;
-    private Double lat;
-    private Double lon;
-    
+    private Location location;
+        
     public Station(JSONObject station)
     {
         jstation = station;
         name = station.getString("name");
-        lat = new Double(station.getString("lat"));
-        lon = new Double(station.getString("lng"));
+        location = new Location(station.getString("lat"),
+                                station.getString("lng"));
         System.out.println(jstation);
     }
     
     public String toString()
     {
-        return name + " is at " + lat + " , " + lon;
+        return name + " is at " + location.getLat() + " , " + location.getLon();
     }
 }

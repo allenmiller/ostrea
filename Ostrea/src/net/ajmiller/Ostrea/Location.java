@@ -7,10 +7,9 @@ public class Location {
     private String name = null;
     private double elevation = 0.0;
 
-    public Location(String lat, String lon, String name) {
+    public Location(String lat, String lon) {
         this.lat = lat;
         this.lon = lon;
-        this.name = name;
         this.elevation = 0.0;
     }
 

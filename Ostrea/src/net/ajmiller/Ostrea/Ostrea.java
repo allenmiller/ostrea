@@ -39,8 +39,8 @@ public class Ostrea {
 
         Stations stations = new Stations();
         System.out.println(stations);
-        Location home = new Location("47.827074", "-122.643950", "home");
-        stations.getNearest(home);
+        Location homeLoc = new Location("47.827074", "-122.643950");
+        stations.getNearest(homeLoc);
 
     }
 
