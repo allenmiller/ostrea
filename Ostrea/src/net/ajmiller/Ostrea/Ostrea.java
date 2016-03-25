@@ -14,35 +14,34 @@ import org.json.JSONObject;
  */
 public class Ostrea {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		System.out.println("Starting main()");
-		TidePredictions td = new TidePredictions("20160324", "72","9445133");
-		System.out.println(td);
-//		System.out.println(tdjson.names());
-		//System.out.println(tdjson.keys());
-		
-//		Iterator<String> i = tdjson.keys();
-//		while (i.hasNext()) {
-			//System.out.println(i.next());
-//		}
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        System.out.println("Starting main()");
+        TidePredictions td = new TidePredictions("20160324", "72", "9445133");
+        System.out.println(td);
+        // System.out.println(tdjson.names());
+        // System.out.println(tdjson.keys());
 
-//		JSONObject  metadataPoints = (JSONObject) tdjson.get("metadata");
-//		Iterator<Object> ii = dataPoints.iterator();
-//		System.out.println(metadataPoints);
-//		Iterator<Object> ji = metadataPoints.iterator();
-//		while (ji.hasNext()){
-//			System.out.println((JSONObject)ji.next());
-//		}
+        // Iterator<String> i = tdjson.keys();
+        // while (i.hasNext()) {
+        // System.out.println(i.next());
+        // }
 
-		Stations stations = new Stations();
-		System.out.println(stations);
-		
-		Location home = new Location("47.827074", "-122.643950", "home");
-		
-		System.out.println(home.getLat() + home.getLon() + home.getName());
-	}
+        // JSONObject metadataPoints = (JSONObject) tdjson.get("metadata");
+        // Iterator<Object> ii = dataPoints.iterator();
+        // System.out.println(metadataPoints);
+        // Iterator<Object> ji = metadataPoints.iterator();
+        // while (ji.hasNext()){
+        // System.out.println((JSONObject)ji.next());
+        // }
+
+        Stations stations = new Stations();
+        System.out.println(stations);
+        Location home = new Location("47.827074", "-122.643950", "home");
+        stations.getNearest(home);
+
+    }
 
 }
