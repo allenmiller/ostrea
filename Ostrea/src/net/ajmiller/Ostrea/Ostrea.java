@@ -5,10 +5,6 @@ package net.ajmiller.Ostrea;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Iterator;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 /**
  * @author ajmiller
@@ -52,6 +48,7 @@ public class Ostrea {
 
         TidePredictions td = new TidePredictions(currentDateStr, "1", nearest.getStationId());
         System.out.println(td);
+        td.getTideDatapoints();
     }
 
 }

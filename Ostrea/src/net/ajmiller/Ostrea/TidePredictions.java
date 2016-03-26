@@ -15,6 +15,7 @@ public class TidePredictions {
 
     public TidePredictions(String startDate, String range, String station) {
         getTidePredictions(startDate, range, station);
+        dataPoints = (JSONArray) tidePredictions.get("predictions");
     }
 
     private void getTidePredictions(String startDate, String range, String station) {
@@ -26,10 +27,9 @@ public class TidePredictions {
         dateObtained = new Date();
     }
 
-    private void getTideDatapoints() {
-        dataPoints = (JSONArray) tidePredictions.get("predictions");
+    public void getTideDatapoints() {
+
         // Iterator<Object> ii = dataPoints.iterator();
-        System.out.println(dataPoints);
         Iterator<Object> ji = dataPoints.iterator();
         while (ji.hasNext()) {
             System.out.println((JSONObject) ji.next());
