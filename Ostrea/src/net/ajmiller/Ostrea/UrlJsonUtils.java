@@ -34,9 +34,15 @@ class UrlJsonUtils {
 
     static InputStream getURLStream(URL url) {
         InputStream is = null;
-        Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("web-proxy.corp.hp.com", 8080));
+        Proxy proxy = null; // new Proxy(Proxy.Type.HTTP, new InetSocketAddress("web-proxy.corp.hp.com", 8080));
         try {
-            is = url.openConnection(proxy).getInputStream();
+        	if (proxy != null)
+        	{
+        		is = url.openConnection(proxy).getInputStream();
+        	} else
+        	{
+        		is = url.openConnection().getInputStream();
+        	}
         } catch (IOException e) {
             System.out.println("AJM, exception getting URL connection");
             // TODO Auto-generated catch block

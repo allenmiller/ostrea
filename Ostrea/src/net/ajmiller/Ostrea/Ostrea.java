@@ -3,6 +3,8 @@
  */
 package net.ajmiller.Ostrea;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 
 import org.json.JSONArray;
@@ -19,8 +21,11 @@ public class Ostrea {
      */
     public static void main(String[] args) {
         System.out.println("Starting main()");
-        TidePredictions td = new TidePredictions("20160324", "72", "9445133");
-        System.out.println(td);
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+        Date currentDate = new Date();
+        String currentDateStr = formatter.format(currentDate);
+        System.out.println(currentDateStr);
+
         // System.out.println(tdjson.names());
         // System.out.println(tdjson.keys());
 
@@ -40,8 +45,13 @@ public class Ostrea {
         Stations stations = new Stations();
         System.out.println(stations);
         Location homeLoc = new Location("47.827074", "-122.643950");
-        stations.getNearest(homeLoc);
+        Station nearest = stations.getNearest(homeLoc);
+        System.out.print("The nearest tide station is " + nearest);
+        System.out.print(" it is "+ nearest.getLocation().getDistance(homeLoc));
+        System.out.println(" meters away");
 
+        TidePredictions td = new TidePredictions(currentDateStr, "1", nearest.getStationId());
+        System.out.println(td);
     }
 
 }

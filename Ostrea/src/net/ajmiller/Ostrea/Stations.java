@@ -33,8 +33,8 @@ public class Stations {
         return stationArray;
     }
 
-    public JSONObject getNearest(Location loc) {
-        JSONObject nearest = null;
+    public Station getNearest(Location loc) {
+        Station nearest = null;
         Station nextStation = null;
         Double nearestDistance = Double.MAX_VALUE;
         Double nextDistance;
@@ -50,7 +50,12 @@ public class Stations {
         while (i.hasNext()){
             nextStation = new Station((JSONObject) i.next());
             System.out.println(nextStation);
-
+            nextDistance = nextStation.getLocation().getDistance(loc);
+            if (nextDistance < nearestDistance)
+            {
+            	nearestDistance = nextDistance;
+            	nearest = nextStation;
+            }
         }
         return nearest;
     }
