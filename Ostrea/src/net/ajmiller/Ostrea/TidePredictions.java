@@ -29,7 +29,6 @@ public class TidePredictions {
 
     public void getTideDatapoints() {
 
-        // Iterator<Object> ii = dataPoints.iterator();
         Iterator<Object> ji = dataPoints.iterator();
         while (ji.hasNext()) {
             System.out.println((JSONObject) ji.next());
