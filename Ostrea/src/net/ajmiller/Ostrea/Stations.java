@@ -38,14 +38,14 @@ public class Stations {
         Station nextStation = null;
         Double nearestDistance = Double.MAX_VALUE;
         Double nextDistance;
-        
+
         System.out.println("in getNearest()");
-        
+
         if (stationArray==null)
         {
             return null;
         }
-        
+
         Iterator<Object> i = stationArray.iterator();
         while (i.hasNext()){
             nextStation = new Station((JSONObject) i.next());
