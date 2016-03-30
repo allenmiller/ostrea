@@ -7,6 +7,8 @@ public class Station {
     private String name;
     private Location location;
     private String stationId;
+    private String harcon;
+    private Boolean isHarmonic = Boolean.FALSE;
     
     public Station(JSONObject station)
     {
@@ -14,6 +16,11 @@ public class Station {
         location = new Location(station.getString("lat"),
                                 station.getString("lng"));
         stationId = station.getString("stnid");
+        harcon = station.getString("harcon");
+        if (harcon.equals("1"))
+        {
+        	isHarmonic = Boolean.TRUE;
+        }
     }
     public Location getLocation()
     {
@@ -26,5 +33,9 @@ public class Station {
     public String toString()
     {
         return name + " is at " + location.getLat() + " , " + location.getLon();
+    }
+    public Boolean getIsHarmonic()
+    {
+    	return isHarmonic;
     }
 }

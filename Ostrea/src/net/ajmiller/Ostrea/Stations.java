@@ -33,7 +33,7 @@ public class Stations {
         return stationArray;
     }
 
-    public Station getNearest(Location loc) {
+    public Station getNearest(Location loc, Boolean findHarmonic) {
         Station nearest = null;
         Station nextStation = null;
         Double nearestDistance = Double.MAX_VALUE;
@@ -49,6 +49,10 @@ public class Stations {
         Iterator<Object> i = stationArray.iterator();
         while (i.hasNext()){
             nextStation = new Station((JSONObject) i.next());
+            if (findHarmonic && !nextStation.getIsHarmonic())
+            {
+            	continue;
+            }
             System.out.println(nextStation);
             nextDistance = nextStation.getLocation().getDistance(loc);
             if (nextDistance < nearestDistance)
@@ -63,4 +67,8 @@ public class Stations {
     public String toString() {
         return stations.toString() + "\n" + stationArray.toString();
     }
+
+	public Station getNearest(Location homeLoc) {
+		return getNearest(homeLoc, Boolean.FALSE);
+	}
 }

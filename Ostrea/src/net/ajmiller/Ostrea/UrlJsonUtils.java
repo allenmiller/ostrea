@@ -45,9 +45,9 @@ class UrlJsonUtils {
         		is = url.openConnection().getInputStream();
         	}
         } catch (IOException e) {
-            System.out.println("AJM, exception getting URL connection");
+            System.out.println("AJM, exception getting connection for " + url);
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            e.getLocalizedMessage();
         }
         return is;
     }
