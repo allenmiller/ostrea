@@ -8,7 +8,7 @@ import org.json.JSONObject;
 public class Stations {
 
     private String baseURL = "http://tidesandcurrents.noaa.gov/cgi-bin/map2/odinmap.cgi?" + "type=TidePredictions"
-            + "&nelat=47.79" + "&nelng=-122.29" + "&swlat=47.53" + "&swlng=-122.78" + "&mode=json";
+            + "&nelat=47.87436562439139" + "&nelng=-122.52511215209961" + "&swlat=47.7" + "&swlng=-122.76183319091797" + "&mode=json";
 
     private JSONObject stations = null;
     private JSONArray stationArray = null;
@@ -23,7 +23,7 @@ public class Stations {
         JSONArray stationArray = (JSONArray) stations.getJSONArray("locations");
         // dataPoints = (JSONArray) tidePredictions.get("predictions");
         // Iterator<Object> ii = dataPoints.iterator();
-        System.out.println(stationArray);
+        // System.out.println(stationArray);
         Iterator<Object> i = stationArray.iterator();
         while (i.hasNext()) {
             ctr++;
