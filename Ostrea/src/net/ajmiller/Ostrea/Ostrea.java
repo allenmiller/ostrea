@@ -57,7 +57,7 @@ public class Ostrea {
 
     	System.out.println("The nearest harmonic station is " + nearestHarmonic);
         System.out.println(" it is "+ nearestHarmonic.getLocation().getDistance(homeLoc) + " meters away.");
-        TidePredictions td = new TidePredictions(currentDateStr, "1", nearestHarmonic.getStationId());
+        TidePredictions td = new TidePredictions(currentDateStr, "48", nearestHarmonic.getStationId());
         System.out.println(td);
         td.getTideDatapoints();
     }
