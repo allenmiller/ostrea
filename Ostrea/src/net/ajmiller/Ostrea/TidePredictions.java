@@ -41,10 +41,11 @@ public class TidePredictions {
     	String dpDate;
     	Double lastTide = Double.NEGATIVE_INFINITY;
     	Double dpTide;
-
+    	
     	Boolean tideRising = Boolean.FALSE;
     	
     	Iterator<Object> ji = dataPoints.iterator();
+    	System.out.println("Current time is "+ new Date());
     	if (ji.hasNext())
     	{
     		dp = (JSONObject)ji.next();
