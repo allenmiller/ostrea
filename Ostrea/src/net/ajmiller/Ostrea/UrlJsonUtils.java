@@ -35,8 +35,8 @@ class UrlJsonUtils {
     static InputStream getURLStream(URL url) {
         InputStream is = null;
         Proxy proxy = null;
-        //proxy = null; 
-        proxy =  new Proxy(Proxy.Type.HTTP, new InetSocketAddress("web-proxy.corp.hp.com", 8080));
+        proxy = null;
+        //proxy =  new Proxy(Proxy.Type.HTTP, new InetSocketAddress(PROXY_ADDRESS, 8080));
         try {
         	if (proxy != null)
         	{
